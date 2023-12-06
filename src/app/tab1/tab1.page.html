@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Buscar Pokemon
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-content>
+      <ion-input (input)="setValor(pokevalor.value)" #pokevalor fill="solid" label="Buscar Pokemon" labelPlacement="floating" placeholder="Nome ou Id"></ion-input>
+      <ion-button style='margin-top: 2%;' (click)="buscarPokemon(getValor())">Pesquisar</ion-button>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <img src={{this.pokemon.image}}/>
+    <ion-card-header>
+      <ion-card-title>{{this.pokemon.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          Habilidades: {{this.pokemon.abilities}}
+        </ion-item>
+        <ion-item>
+          Altura: {{this.pokemon.height}}
+        </ion-item>
+        <ion-item>
+          Largura: {{this.pokemon.weight}}
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

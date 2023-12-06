@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Arena pokemon
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    
+    <ion-text color={{this.resultadoBatalha.cor}}>
+      <h1>{{this.resultadoBatalha.texto}}</h1>
+    </ion-text>
+    
+    <img src={{this.pokemon.image}}/>
+    <ion-card-header>
+      <ion-card-title>{{this.pokemon.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          Habilidades: {{this.pokemon.abilities}}
+        </ion-item>
+        <ion-item>
+          Altura: {{this.pokemon.height}}
+        </ion-item>
+        <ion-item>
+          Largura: {{this.pokemon.weight}}
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="addPhotoToGallery()">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
